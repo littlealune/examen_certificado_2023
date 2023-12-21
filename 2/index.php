@@ -1,8 +1,10 @@
 <?php
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
-
-//Aquí genero el valor
-
+/* Genera un valor entre 1 y 100, y muestra si es par o si es impar*/
+$numero = rand(1,100);
+$paroimpar = match($numero%2==0){
+    true => "par",
+    false => "impar"
+}
 
 ?>
 <!doctype html>
@@ -20,7 +22,7 @@
 <a style="%;color:darkblue;size:2rem" href="./../index.php">Volver</a>
 
 <h1>
-<!--    Aquí lo visualizo  -->
+<?=$numero?> es <?=$paroimpar?>
 </h1>
 
 </body>

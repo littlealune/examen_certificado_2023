@@ -1,8 +1,22 @@
 <?php
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
+$opcion = $_POST['submit'] ?? null;
+$operador = $_POST['operador'] ?? null;
+$numero1 = $_POST['op1'] ?? 0;
+$numero2 = $_POST['op2'] ?? 0;
 
-//Aquí genero el valor
-
+switch ($opcion){
+    case "Operar":
+        $resultado = match($operador){
+            "+" => (int)$numero1+(int)$numero2,
+            "-" => (int)$numero1-(int)$numero2,
+            "*" => (int)$numero1*(int)$numero2,
+            "/" => (int)$numero1/(int)$numero2
+        };
+        break;
+    default:
+        $resultado = "";
+        break;
+}
 
 ?>
 <!doctype html>
@@ -21,6 +35,7 @@
 
 <fieldset>
     <legend>Calculadora</legend>
+    <form method="post" action="index.php">
     <input type="text" name="op1" id="" placeholder="Operador 1">
     <select name="operador" id="">
         <option value="+">+</option>
@@ -28,13 +43,13 @@
         <option value="*">*</option>
         <option value="/">/</option>
     </select>
-    <input type="text" name="op1" id="" placeholder="Operador 2">
-    <input type="submit" value="Opearar" value="submit">
+    <input type="text" name="op2" id="" placeholder="Operador 2">
+    <input type="submit" value="Operar" name="submit">
+    </form>
 </fieldset>
 <h1>
-<!--    Aquí el resultado -->
+<?=$resultado?>
 </h1>
-
 </body>
 </html>
 

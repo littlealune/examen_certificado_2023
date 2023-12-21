@@ -12,7 +12,7 @@
        $nombre =5;
        echo "mi nombre es $nombre+3<br />";
 $apellido="ruiz";
-echo "mi apellido es $ruiz";
+echo "mi apellido es $apellido";
 ?>
 </body>
 </html>

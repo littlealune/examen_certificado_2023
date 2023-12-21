@@ -1,7 +1,4 @@
 <?php
-// Dado el array de la tienda que se facilita en el ejercicio,
-// muestra el nombre de todos los productos de los que haya más de 2000 unidades y cuesten más de 2,10 euros
-//de cada uno muestra el nombre del producto, sus unidades y su precio
 $productos = [
     'lechuga' =>
                 ['unidades' => 200,
@@ -19,10 +16,13 @@ $productos = [
                ['unidades' => 2500,
                 'precio' => 2.10],
 ];
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
 
-//Aquí genero el valor
-
+$texto = "";
+foreach ($productos as $producto=>$contenido){
+    if($contenido['unidades']>2000 AND $contenido['precio']>2.10){
+        $texto.= "Producto: $producto. Unidades: {$contenido['unidades']}. Precio {$contenido['precio']}<br/>";
+    }
+}
 
 ?>
 <!doctype html>
@@ -37,14 +37,9 @@ $productos = [
 <body>
 
 <a style="%;color:darkblue;size:2rem" href="./../index.php">Volver</a>
-<fieldset>
-    <legend>Opciones</legend>
-    <input type="submit" value="Ver" name="submit">
-    <input type="submit" value="Insertar" name="submit">
-    <input type="submit" value="Borrar" name="submit">
-    <input type="submit" value="Consultar" name="submit">
-    <input type="submit" value="Editar" name="submit">
-</fieldset>
+<h1>
+    <?=$texto?>
+</h1>
 
 </body>
 </html>

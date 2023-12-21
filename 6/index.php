@@ -1,9 +1,5 @@
 <?php
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
-
-//Aquí genero el valor
-
-
+$opcion = $_POST['submit'] ?? "Ninguno";
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,13 +15,17 @@
 <a style="%;color:darkblue;size:2rem" href="./../index.php">Volver</a>
 <fieldset>
     <legend>Opciones</legend>
+    <form action="index.php" method="post">
     <input type="submit" value="Ver" name="submit">
     <input type="submit" value="Insertar" name="submit">
     <input type="submit" value="Borrar" name="submit">
     <input type="submit" value="Consultar" name="submit">
     <input type="submit" value="Editar" name="submit">
+    </form>
 </fieldset>
-
+<h1>
+    <?=$opcion?>
+</h1>
 </body>
 </html>
 

@@ -9,7 +9,17 @@
 //Nota 1: 9
 //Nota 2: 9
 */
-
+$notas =
+    [rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10),
+    rand(0,10)];
 
 
 ?>
@@ -28,7 +38,11 @@
 <a style="%;color:darkblue;size:2rem" href="./../index.php">Volver</a>
 
 <h1>
-<!--    Si no te lía mucho, deberías de visualizarlo aquí  -->
+<?php
+for ($i = 0; $i < sizeof($notas);$i++){
+    echo "Nota ".($i+1).": $notas[$i]<br/>";
+}
+?>
 </h1>
 
 </body>

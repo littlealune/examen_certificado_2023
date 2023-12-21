@@ -1,8 +1,17 @@
 <?php
-// Genera un valor entre 1 y 100, y muestra si es par o si es impar
 
-//Aquí genero el valor
-
+$opcion = $_POST['submit'] ?? null;
+switch ($opcion){
+    case "Genera Password":
+        $password="";
+        for($i = 0; $i < 8 ; $i++){
+            $password.=chr(rand(65,127));
+        }
+        break;
+    default:
+        $password = "";
+        break;
+}
 
 ?>
 <!doctype html>
@@ -24,7 +33,7 @@
 <form action="index.php" method="post">
     <input type="submit" value="Genera Password" name="submit">
 </form>
-
+<h2><?=$password?></h2>
 </fieldset>
 </body>
 </html>

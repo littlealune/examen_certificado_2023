@@ -1,7 +1,6 @@
 <?php
-// Genera un número aleatorio y muestralo en decimal, octal, binario y hexadecimal
-//Aquí genero el valor
 
+$numero = rand();
 
 ?>
 <!doctype html>
@@ -17,7 +16,11 @@
 
 <a style="%;color:darkblue;size:2rem" href="./../index.php">Volver</a>
 <h1>
-<!--    Aquí puedes visualizarlo -->
+    <?php
+
+    echo "Número: $numero. Octal: ".decoct($numero).". Binario: ".decbin($numero).". Hexadecimal: ".dechex($numero).".";
+
+    ?>
 </h1>
 </body>
 </html>
